@@ -46,6 +46,15 @@
       border-radius: 70% 70% 100% 100%;
     }
 
+    .belly {
+      top: 60%;
+      left: 2.5%;
+      background: var(--penguin-belly);
+      width: 95%;
+      height: 100%;
+      border-radius: 120% 120% 100% 100%;
+    }
+
     .right-hand {
       top: 5%;
       left: 25%;
@@ -55,6 +64,51 @@
       border-radius: 30% 30% 120% 30%;
       transform-origin: top left;
       animation: wave 2s infinite;
+    }
+
+    .left-hand {
+      top: 5%;
+      left: 70%;
+      background: black;
+      width: 30%;
+      height: 60%;
+      border-radius: 30% 30% 30% 120%;
+    }
+
+    .beak {
+      top: 60%;
+      left: 40%;
+      background: var(--penguin-beak);
+      width: 20%;
+      height: 10%;
+      border-radius: 50%;
+    }
+
+    .eye {
+      top: 25%;
+      width: 15%;
+      height: 17%;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .eye.left {
+      left: 25%;
+    }
+
+    .eye.right {
+      left: 60%;
+    }
+
+    .eye::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      width: 40%;
+      height: 40%;
+      background: black;
+      border-radius: 50%;
     }
 
     @keyframes wave {
@@ -67,11 +121,19 @@
 
 <body>
 
-  <div class="penguin">
-    <div class="penguin-top"></div>
-    <div class="penguin-bottom"></div>
-    <div class="right-hand"></div>
+<div class="penguin">
+  <div class="penguin-top">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
   </div>
+
+  <div class="penguin-bottom">
+    <div class="belly"></div>
+    <div class="left-hand"></div>
+    <div class="right-hand"></div>
+    <div class="beak"></div>
+  </div>
+</div>
 
 </body>
 </html>
