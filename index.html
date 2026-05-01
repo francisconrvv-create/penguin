@@ -1,138 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Penguin</title>
+<meta charset="UTF-8">
+<title>Penguin</title>
 
-  <style>
-    :root {
-      --penguin-size: 200px;
-      --penguin-skin: black;
-      --penguin-belly: white;
-      --penguin-beak: orange;
-    }
+<style>
+:root {
+  --penguin-size: 300px;
+  --penguin-skin: gray;
+  --penguin-belly: white;
+  --penguin-beak: orange;
+  --penguin-blush: pink;
+}
 
-    body {
-      background:#c6faf1;
-    }
+body {
+  background: #c6faf1;
+}
 
-    .penguin {
-      position: relative;
-      margin: auto;
-      margin-top: 5%;
-      width: var(--penguin-size);
-      height: var(--penguin-size);
-    }
+/* CONTENEDOR */
+.penguin {
+  position: relative;
+  margin: auto;
+  margin-top: 5%;
+  width: var(--penguin-size);
+  height: var(--penguin-size);
+}
 
-    .penguin * {
-      position: absolute;
-    }
+.penguin * {
+  position: absolute;
+}
 
-    .penguin-top {
-      top: 10%;
-      left: 25%;
-      background: var(--penguin-skin);
-      width: 50%;
-      height: 45%;
-      border-radius: 70% 70% 60% 60%;
-    }
+/* CABEZA */
+.penguin-top {
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  height: 45%;
+  background: var(--penguin-skin);
+  border-radius: 70% 70% 60% 60%;
+  z-index: 3;
+}
 
-    .penguin-bottom {
-      top: 40%;
-      left: 23.5%;
-      background: var(--penguin-skin);
-      width: 53%;
-      height: 45%;
-      border-radius: 70% 70% 100% 100%;
-    }
+/* CUERPO */
+.penguin-bottom {
+  top: 40%;
+  left: 23.5%;
+  width: 53%;
+  height: 45%;
+  background: var(--penguin-skin);
+  border-radius: 70% 70% 100% 100%;
+  z-index: 2;
+}
 
-    .belly {
-      top: 60%;
-      left: 2.5%;
-      background: var(--penguin-belly);
-      width: 95%;
-      height: 100%;
-      border-radius: 120% 120% 100% 100%;
-    }
+/* PANZA */
+.belly {
+  top: 15%;
+  left: 2.5%;
+  width: 95%;
+  height: 90%;
+  background: var(--penguin-belly);
+  border-radius: 120% 120% 100% 100%;
+}
 
-    .right-hand {
-      top: 5%;
-      left: 25%;
-      background: black;
-      width: 30%;
-      height: 60%;
-      border-radius: 30% 30% 120% 30%;
-      transform-origin: top left;
-      animation: wave 2s infinite;
-    }
+/* OJOS */
+.eye {
+  top: 25%;
+  width: 15%;
+  height: 17%;
+  background: white;
+  border-radius: 50%;
+}
 
-    .left-hand {
-      top: 5%;
-      left: 70%;
-      background: black;
-      width: 30%;
-      height: 60%;
-      border-radius: 30% 30% 30% 120%;
-    }
+.eye.left { left: 25%; }
+.eye.right { left: 60%; }
 
-    .beak {
-      top: 60%;
-      left: 40%;
-      background: var(--penguin-beak);
-      width: 20%;
-      height: 10%;
-      border-radius: 50%;
-    }
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background: black;
+  border-radius: 50%;
+}
 
-    .eye {
-      top: 25%;
-      width: 15%;
-      height: 17%;
-      background: white;
-      border-radius: 50%;
-    }
+/* MEJILLAS */
+.cheek {
+  top: 55%;
+  width: 12%;
+  height: 10%;
+  background: var(--penguin-blush);
+  border-radius: 50%;
+}
 
-    .eye.left {
-      left: 25%;
-    }
+.cheek.left { left: 20%; }
+.cheek.right { left: 65%; }
 
-    .eye.right {
-      left: 60%;
-    }
+/* PICO (EN LA CABEZA) */
+.beak {
+  top: 60%;
+  left: 40%;
+  width: 20%;
+  height: 10%;
+  background: var(--penguin-beak);
+  border-radius: 50%;
+}
 
-    .eye::after {
-      content: "";
-      position: absolute;
-      top: 30%;
-      left: 30%;
-      width: 40%;
-      height: 40%;
-      background: black;
-      border-radius: 50%;
-    }
+/* BRAZOS */
+.left-hand {
+  top: 5%;
+  left: 75%;
+  width: 30%;
+  height: 60%;
+  background: var(--penguin-skin);
+  border-radius: 30% 30% 30% 120%;
+  transform: rotate(-45deg);
+  z-index: 1;
+}
 
-    @keyframes wave {
-      0% { transform: rotate(130deg); }
-      50% { transform: rotate(100deg); }
-      100% { transform: rotate(130deg); }
-    }
-  </style>
+.right-hand {
+  top: 5%;
+  left: -5%;
+  width: 30%;
+  height: 60%;
+  background: var(--penguin-skin);
+  border-radius: 30% 30% 120% 30%;
+  transform-origin: top left;
+  animation: wave 2s infinite;
+  z-index: 1;
+}
+
+/* PATAS */
+.foot {
+  top: 85%;
+  width: 15%;
+  height: 10%;
+  background: var(--penguin-beak);
+  border-radius: 50%;
+}
+
+.foot.left {
+  left: 30%;
+  transform: rotate(80deg);
+}
+
+.foot.right {
+  left: 55%;
+  transform: rotate(-80deg);
+}
+
+/* ANIMACIÓN */
+@keyframes wave {
+  0% { transform: rotate(130deg); }
+  50% { transform: rotate(100deg); }
+  100% { transform: rotate(130deg); }
+}
+</style>
 </head>
 
 <body>
 
 <div class="penguin">
+
+  <!-- CABEZA -->
   <div class="penguin-top">
     <div class="eye left"></div>
     <div class="eye right"></div>
-  </div>
-
-  <div class="penguin-bottom">
-    <div class="belly"></div>
-    <div class="left-hand"></div>
-    <div class="right-hand"></div>
+    <div class="cheek left"></div>
+    <div class="cheek right"></div>
     <div class="beak"></div>
   </div>
+
+  <!-- CUERPO -->
+  <div class="penguin-bottom">
+    <div class="left-hand"></div>
+    <div class="right-hand"></div>
+    <div class="belly"></div>
+  </div>
+
+  <!-- PATAS -->
+  <div class="foot left"></div>
+  <div class="foot right"></div>
+
 </div>
 
 </body>
