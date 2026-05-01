@@ -4,73 +4,74 @@
   <meta charset="UTF-8">
   <title>Penguin</title>
 
-<style>
-  :root {
-    --penguin-size: 200px;
-    --penguin-skin: black;
-    --penguin-belly: white;
-    --penguin-beak: orange;
-  }
+  <style>
+    :root {
+      --penguin-size: 200px;
+      --penguin-skin: black;
+      --penguin-belly: white;
+      --penguin-beak: orange;
+    }
 
-  body {
-    background: #c6faf1;
-  }
+    body {
+      background:#c6faf1;
+    }
 
-  .penguin {
-    position: relative;
-    margin: auto;
-    margin-top: 5%;
-    width: var(--penguin-size);
-    height: var(--penguin-size);
-  }
+    .penguin {
+      position: relative;
+      margin: auto;
+      margin-top: 5%;
+      width: var(--penguin-size);
+      height: var(--penguin-size);
+    }
 
-  .penguin * {
-    position: absolute;
-  }
+    .penguin * {
+      position: absolute;
+    }
 
-  .penguin-top {
-    top: 10%;
-    left: 25%;
-    background: var(--penguin-skin);
-    width: 50%;
-    height: 45%;
-    border-radius: 70% 70% 60% 60%;
-  }
+    .penguin-top {
+      top: 10%;
+      left: 25%;
+      background: var(--penguin-skin);
+      width: 50%;
+      height: 45%;
+      border-radius: 70% 70% 60% 60%;
+    }
 
-  .penguin-bottom {
-    top: 40%;
-    left: 23.5%;
-    background: var(--penguin-skin);
-    width: 53%;
-    height: 45%;
-    border-radius: 70% 70% 100% 100%;
-  }
+    .penguin-bottom {
+      top: 40%;
+      left: 23.5%;
+      background: var(--penguin-skin);
+      width: 53%;
+      height: 45%;
+      border-radius: 70% 70% 100% 100%;
+    }
 
-.right-hand {
-  top: 5%;
-  left: 25%;
-  background: black;
-  width: 30%;
-  height: 60%;
-  border-radius: 30% 30% 120% 30%;
-  transform-origin: top left;
-  animation: wave 2s infinite;
-}
+    .right-hand {
+      top: 5%;
+      left: 25%;
+      background: black;
+      width: 30%;
+      height: 60%;
+      border-radius: 30% 30% 120% 30%;
+      transform-origin: top left;
+      animation: wave 2s infinite;
+    }
 
-  @keyframes wave {
-    0% { transform: rotate(130deg); }
-    50% { transform: rotate(100deg); }
-    100% { transform: rotate(130deg); }
-  }
-</style>
-
+    @keyframes wave {
+      0% { transform: rotate(130deg); }
+      50% { transform: rotate(100deg); }
+      100% { transform: rotate(130deg); }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="penguin">
-  <!-- todo tu HTML del pingüino aquí -->
-</div>
+  <div class="penguin">
+    <div class="penguin-top"></div>
+    <div class="penguin-bottom"></div>
+    <div class="right-hand"></div>
+  </div>
 
 </body>
 </html>
